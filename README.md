@@ -26,11 +26,11 @@ images on top of the base packages.*
 
 **1.** Download the public Docker image from Dockerhub:
 
-  	 docker pull samuelterra22/docker-base:version
+  	 docker pull samuelterra22/docker-base
 
 **2.** Run the Docker image as a new Docker container:
 
-  	 docker run -d --restart=always --name=appname samuelterra22/docker-base:version
+  	 docker run -d --restart=always --name=appname samuelterra22/docker-base
 
 Get a terminal in a running container
 -------------------------------------
