@@ -17,7 +17,7 @@ apt-get -y install curl
 
 # install python (required for Supervisor)
 apt-get -y install python python-pip
-pip install --upgrade pip
+python -m pip install --upgrade pip
 
 # directories and conf files
 mkdir -p /etc/supervisord/
@@ -62,10 +62,22 @@ apt-get -y install git
 # Unattended upgrades (security patches)
 # ------------------------------------------------------------------------------
 
+# https://github.com/Microsoft/WSL/issues/1761
+# https://jonatasoliveira.me/invoke-rc-d-policy-rc-d-denied-execution-of-start/
+export RUNLEVEL=1
+echo exit 0 > /usr/sbin/policy-rc.d
+
 apt-get -y install unattended-upgrades
 dpkg-reconfigure unattended-upgrades
+
+# ------------------------------------------------------------------------------
+# Install locales
+# ------------------------------------------------------------------------------
+apt-get clean && apt-get update && apt-get install -y locales
 
 # ------------------------------------------------------------------------------
 # Clean up
 # ------------------------------------------------------------------------------
 rm -rf /provision
+apt-get -y autoremove
+apt-get -y autoclean
