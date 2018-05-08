@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 # Docker provisioning script for the docker-base image
 #
-# 	e.g. docker build -t samuelterra/docker-base:version .
+# 	e.g. docker build -t samuelterra/docker-base .
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
